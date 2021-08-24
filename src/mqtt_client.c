@@ -1261,6 +1261,7 @@ int mqtt_client_disconnect(MQTT_CLIENT_HANDLE handle, ON_MQTT_DISCONNECTED_CALLB
                 }
                 BUFFER_delete(disconnectPacket);
             }
+            close_connection(mqtt_client);
             clear_mqtt_options(mqtt_client);
         }
         else
